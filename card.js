@@ -1,4 +1,5 @@
-let card = function(p1, p2){
-    this.suit = p1,
-    this.rank = p2,
+let Card = function(pSuit, pRank){
+    this.suit = pSuit,
+    this.rank = pRank,
+    this.inuse = false;
 }
