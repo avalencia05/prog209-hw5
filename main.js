@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function(event){
-    playerArray=[];
-    computerArray=[];
+    document.getElementById("next").style.visibility = "hidden";
+    let playerArray=[];
+    let computerArray=[];
 
     document.getElementById("deal").addEventListener("click",function(){
         deck.Load();
@@ -21,11 +22,21 @@ document.addEventListener("DOMContentLoaded", function(event){
             
         }
         document.getElementById("deal").style.visibility = "hidden";
-        document.getElementById("next").style.visibility = "hidden";
+        document.getElementById("next").style.visibility = "visible";
         
     })
 
     document.getElementById("next").addEventListener("click",function(){
-        let 
+        let turnCount = Number(document.getElementById("TurnCount").innerText);
+        let playerScore = Number(document.getElementById("PlayerScore").innerText);
+        let comuterScore = Number(document.getElementById("ComputerScore").innerText);
+        let playerCard = document.getElementById("PlayerCard");
+        let computerCard = document.getElementById("ComputerCard");
+
+        
+
     })
 })
+    function suitGen(aSuit) {
+        
+    }
