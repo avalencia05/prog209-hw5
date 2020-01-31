@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(event){
+document.addEventListener("DOMContentLoaded", function(){
     document.getElementById("next").style.visibility = "hidden";
     let playerArray=[];
     let computerArray=[];
@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", function(event){
             computerArray[i] = deck.cardArray[random];
             deck.cardArray[random].inuse = true;
             
-            
         }
         
         document.getElementById("deal").style.visibility = "hidden";
@@ -38,53 +37,36 @@ document.addEventListener("DOMContentLoaded", function(event){
         playerCard.innerText = rankGen(playerArray[turnCount].rank) +
             " " + suitGen(playerArray[turnCount].suit);
         if (playerArray[turnCount].suit === 1 || playerArray[turnCount].suit === 2) {
-            
+            playerCard.className = "blackCard";
+        }else{
+            playerCard.className = "redCard";
         }
+        if(computerArray[turnCount].suit === 1|| computerArray[turnCount].suit === 2){
+            computerArray.className = "blackCard";
+        }else{
+            computerArray.className = "redCard";
+        }
+
+        computerCard.innerText = rankGen(computerCard[turnCount].rank) +
+            " " + suitGen(computerCard[turnCount].suit);
+        
+        if (playerCard[turnCount].rank > computerCard[turnCount].rank) {
+            playerScore++;
+            document.getElementById("message").innerText = "You won this hand!"  
+        }
+        if (playerCard[turnCount].rank < computerCard[turnCount].rank) {
+            computerScore++;
+            document.getElementById("message").innerText = "The computer won this hand!"      
+        }
+        if (playerCard[turnCount].rank === computerCard[turnCount].rank) {
+            if (playerCard[turnCount].suit < computerCard[turnCount].suit) {
+                playerScore++;
+            }else{
+                computerScore++;
+            }
+        }
+
+        
     })
 })
-    function suitGen(aSuit) {
-        switch(aSuit){
-            case 1: 
-                return "Spade";
-
-                break;
-            case 2: 
-                return "Club";
-
-                break;
-            case 3: 
-                return "Diamond";
-
-                break;
-            case 4: 
-                return "Heart";
-            default:
-                break;
-        }
-        
-    }
-
-    function rankGen(aRank) {
-        if (aRank > 10) {
-            switch (aRank) {
-                case 11: 
-                    return "Jack";
-                    
-                    break;
-                case 12: 
-                    return "Queen";
-                    
-                    break;
-                case 13: 
-                    return "King";
-                    
-                    break;    
-                case 14: 
-                    return "Ace";
-                    
-                    break;
-                default:
-                    break;
-            }
-        }  
-    }
+    
