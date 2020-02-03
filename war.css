@@ -1,0 +1,45 @@
+h1{
+    text-align: center;
+    color: olive;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    
+}
+body{
+    background-color: black;
+}
+button{
+    
+    background-color: olive; /* Green */
+    border: none;
+    border-radius: 4px;
+    color:white;
+    padding: 7px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-flex;
+    font-size: 10px; 
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    
+}
+p{
+    color:olive;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#pDiv,#cDiv{
+    background-color: white;
+    border-radius: 4px;
+    width: 20%; 
+    padding:50px;
+    display: inline-block;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.blackCard{
+    color: black;
+}
+
+.redCard{
+    color: red;
+}
+
