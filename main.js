@@ -2,9 +2,10 @@ document.addEventListener("DOMContentLoaded", function(){
     document.getElementById("next").style.visibility = "hidden";
     let playerArray=[];
     let computerArray=[];
-
+    
     document.getElementById("deal").addEventListener("click",function(){
-        deck.Load();
+        deck.load();
+        
         for (let i = 0; i < 26; i++) {
             random = Math.floor(Math.random()*52)
             while(deck.cardArray[random].inuse === true){
